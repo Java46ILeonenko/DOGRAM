@@ -19,7 +19,7 @@ body {
     justify-content: space-between;
     margin: 0;
     background-color: darkseagreen;
-    /* align-items: center; */
+  
 }
 
 .thumbnails-list {
@@ -39,7 +39,8 @@ body {
     display:block
 }
 .details-title {
-    background-color: cornsilk;
+    background-color: green;
+    color: white;
     position: absolute;
     left: 3vw;
     bottom: 2vw;
@@ -50,6 +51,7 @@ body {
     width: 70vw;
     height: 60vw;
     border-radius: 25%;
+    border: 1px solid greenyellow;
 }
 .details-container {
     position: relative;
@@ -60,8 +62,8 @@ body {
 .thumbnails-title {
     display: block;
     text-align: center;
-    background-color: beige;
-    color: blue;
+    background-color: green;
+    color: white;
     font-size: 1.2rem;
     width: var(--thumbnails-image-width);
     height: var(--thumbnails-title-height);
@@ -69,7 +71,7 @@ body {
 .thumbnails-item {
     margin-top: 2vh;
     margin-left: 2vw;
-    border: 1px solid blue;
+    border: 1px solid greenyellow;
     max-width: var(--thumbnails-image-width);
     min-height: calc(var(--thumbnails-image-height) + var(--thumbnails-title-height));
     border-radius: 25%;
@@ -79,7 +81,7 @@ body {
     text-decoration: none;
 }
 .logo-title {
-    background-color: fuchsia;
+    background-color:  green;
     color: ghostwhite;
     font-size: 2rem;
     text-align: center;
@@ -87,16 +89,19 @@ body {
    margin: 0;
    font-family: lakeshor;
 }
-body, html {
-    height: 100%
-}
-.footer-tittle{
-    font-size: 2rem;
+.footer-title{
+    background-color: green;
+    color: white;
+    font-size: 1rem;
     text-align: center;
     text-transform: uppercase;
     margin: 0;
     font-family: lakeshor;
 }
+body, html {
+    height: 100%
+}
+
 @media (min-width: 568px){
     :root {
         --thumbnails-image-width: 12vw;
@@ -111,7 +116,7 @@ body, html {
         justify-content: flex-start;
         padding: 0;
         margin: 0;
-       
+
     }
     .thumbnails-title {
         
@@ -129,10 +134,11 @@ body, html {
     .thumbnails-item+.thumbnails-item {
         margin-top: 2vh;
     }
-    
+
     .details-image {
         width: 60vw;
         height: 43vw;
+        border: 1px solid greenyellow;
     }
     .details-title {
         left: -4vw;
@@ -141,7 +147,7 @@ body, html {
     }
     .main-content {
         display: flex;
-         justify-content: space-around; 
+        justify-content: space-around; 
         
         
     }
@@ -159,6 +165,15 @@ body, html {
         font-size: 1.5rem;
         
     }
+    .footer-title{
+        font-size: 1.4rem;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 0;
+        font-family: lakeshor;
+        background-color: green;
+        color: white;
+    }
 }
 @media (min-width: 900px){
     :root{
@@ -170,6 +185,7 @@ body, html {
         width: 60vw;
         height: 50vw;
         left: 5cm;
+        border: 1.5px solid greenyellow;
     }
     .thumbnails-title{
         font-size: 2.5rem;
@@ -178,6 +194,7 @@ body, html {
     }
     .thumbnails-item{
         border: 0 ;
+        border: 1.5px solid  greenyellow;
     }
     .details-container{
         justify-content: center;
