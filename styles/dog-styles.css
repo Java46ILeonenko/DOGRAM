@@ -55,7 +55,7 @@ body,html{
     bottom: 2vw;
     font-family: airstream;
     font-style: italic;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .thumbnails-list {
     display: flex;
@@ -137,8 +137,6 @@ body,html{
     }
     .details-image+.details-title{
         position: relative;
-        font-size: 1;
-        
         }
     .thumbnails-list {
         flex-direction: column;
