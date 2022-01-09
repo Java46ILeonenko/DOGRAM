@@ -1,7 +1,5 @@
 console.log("Script launched");
-
 let detailsAudio = document.querySelector(".details-audio");
-
 let detailsImage = document.querySelector(".details-image");
 let anchors = document.querySelectorAll(".thumbnails-anchor");
 let detailsTitle = document.querySelector(".details-title");
@@ -26,12 +24,11 @@ function setDetails(anchor){
     let thumbnailsTitleSelector = `[href="${hrefValue}"] .thumbnails-title`;
     let thumbnailsTitleElement = document.querySelector(thumbnailsTitleSelector);
     detailsTitle.textContent = `${thumbnailsTitleElement.textContent}: ${anchor.getAttribute("data-details-title")}`;
-
-    let thumbnailsSoundlector = `[href="${hrefValue}"] .thumbnails-audio`;
-    let thumbnailsSoundEl = document.querySelector(thumbnailsSoundlector);
-    let srcValue = thumbnailsSoundEl.getAttribute("src");
+    let thumbnailsAudiolector = `[href="${hrefValue}"] .thumbnails-audio`;
+    let thumbnailsAudioEl = document.querySelector(thumbnailsAudiolector);
+    let valueSRC = thumbnailsAudioEl.getAttribute("src");
     detailsAudio.muted = false;
-    detailsAudio.setAttribute("src", srcValue);
+    detailsAudio.setAttribute("src", valueSRC);
 }
 function showDetails() {
     mainContentEl.classList.remove('hidden');
