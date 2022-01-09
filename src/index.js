@@ -1,4 +1,7 @@
 console.log("Script launched");
+
+let detailsAudio = document.querySelector(".details-audio");
+
 let detailsImage = document.querySelector(".details-image");
 let anchors = document.querySelectorAll(".thumbnails-anchor");
 let detailsTitle = document.querySelector(".details-title");
@@ -16,19 +19,31 @@ function setDetails(anchor){
     let hrefValue = anchor.getAttribute("href");
     detailsImage.setAttribute("src", hrefValue);
     anchor.parentElement.classList.add("selected");
-    if (selectedItem && selectedItem!=anchor.parentElement){
+    if (selectedItem){
         selectedItem.classList.remove("selected");
     }
     selectedItem = anchor.parentElement;
     let thumbnailsTitleSelector = `[href="${hrefValue}"] .thumbnails-title`;
     let thumbnailsTitleElement = document.querySelector(thumbnailsTitleSelector);
-    detailsTitle.textContent = `${thumbnailsTitleElement.textContent}: ${anchor.getAttribute("data-details-title")}` ;
+    detailsTitle.textContent = `${thumbnailsTitleElement.textContent}: ${anchor.getAttribute("data-details-title")}`;
 
+    let thumbnailsSoundlector = `[href="${hrefValue}"] .thumbnails-audio`;
+    let thumbnailsSoundEl = document.querySelector(thumbnailsSoundlector);
+    let srcValue = thumbnailsSoundEl.getAttribute("src");
+    detailsAudio.muted = false;
+    detailsAudio.setAttribute("src", srcValue);
 }
 function showDetails() {
-    mainContentEl.classList.remove("hidden");
+    mainContentEl.classList.remove('hidden');
+    detailsImage.parentElement.classList.add('is-tiny');
+    setTimeout(removeIsTiny);
 }
-function hideDetails() {
-    mainContentEl.classList.add("hidden");
-    selectedItem.classList.remove("selected");
+function removeIsTiny() {
+    detailsImage.parentElement.classList.remove('is-tiny');
+}
+function hideDetails(){
+    mainContentEl.classList.add('hidden');
+    if (selectedItem) {
+        selectedItem.classList.remove('selected');
+    }
 }

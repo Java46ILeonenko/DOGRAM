@@ -37,14 +37,15 @@ body, html{
     text-transform: uppercase;
     margin: 0;
     font-family: lakeshor;
+    border-top: 3px solid var(--color-border);
 }
 .details-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;  
 }
 .hidden .details-container {
-    display: none
+    display: none;
 }
 .details-image {
     width: var(--ditails-image-width);
@@ -54,17 +55,24 @@ body, html{
 .details-imageT {
     position: relative;
     width: var(--ditails-image-width);
+    transition: 1.5s cubic-bezier(0.1, 2, 0.8, 1.2);
 }
 .details-title {
     background-color: var(--color-shade-dark);
     color: var(--color-border);
+    border: 1rem;
     position: absolute;
     left: 3vw;
     bottom: 2vw;
     font-family: airstream;
     font-style: italic;
+    border: 3px solid var(--color-border);
+    border-radius: 1rem;
 }
 .hide-button {
+    background-color: var(--color-shade-dark);
+    color: var(--color-border);
+    border-color: var(--color-border);
     position: absolute;
     top: 2vw;
     right: 3vw;
@@ -78,7 +86,7 @@ body, html{
     justify-content: space-around;
     align-items: flex-end ;
     list-style-type: none;
-    padding: 0;
+    padding: 0 ;
     padding-top: 2,5vh;
 }
 .hidden .thumbnails-list {
@@ -98,11 +106,26 @@ body, html{
     border-radius: 20%;
     overflow: hidden;
 }
+.thumbnails-item:hover{
+    transform: scale(1.025);
+    transition: 40ms;
+}
+.is-tiny{
+    transform: scale(0.001);
+    transition: 0s;
+}
 .hidden .thumbnails-item {
     max-width: var(--thumbnails-hidden-image-width);
     max-height: calc(var(--thumbnails-hidden-image-height)+var(--thumbnails-hidden-title-height));
     min-height: 52vw;
-
+}
+.hidden .thumbnails-item{
+    margin-left: 5px;
+    margin-right: 5px;
+    min-height: 24vw;
+    min-height: 24vw;
+    max-width: var(--thumbnails-hidden-image-width);
+    max-height: calc(var(--thumbnails-hidden-image-height)+var(--thumbnails-hidden-title-height));
 }
 .selected.thumbnails-item {
     border-radius: 0;
@@ -201,16 +224,6 @@ body, html{
     .thumbnails-item + .thumbnails-item {
         margin-top: 2.3vh;
     }
-    .hidden .thumbnails-item {
-        min-height: 24vw;
-        min-height: 24vw;
-        margin-right: 5vw;
-        max-width: var(--thumbnails-hidden-image-width);
-        max-height: calc(var(--thumbnails-hidden-image-height)+var(--thumbnails-hidden-title-height));
-    }
-    .hidden .thumbnails-item#last-item {
-        margin-right: 0;
-    }
     .thumbnails-title {
         font-size: 1rem;
     }
@@ -236,7 +249,10 @@ body, html{
     }
     .thumbnails-list {
        max-height: 85vh;
-       padding-right: 2vw
+       padding-left: 5px;
+       padding-right: 5px;
+       padding-top: 0px;
+       padding-bottom: 0px
     }
     .thumbnails-title {
         font-size: 1.5rem; 
